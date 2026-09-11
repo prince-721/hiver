@@ -10,3 +10,4 @@ uvicorn>=0.29
 pytest>=7.4
 matplotlib>=3.8
 python-dotenv>=1.0
+kagglehub>=0.2

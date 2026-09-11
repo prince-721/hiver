@@ -80,20 +80,26 @@ python -m scripts.analyze_failures
 python -m src.predict --message "My order says delivered but I never received it"
 ```
 
-## Full reproduction (real data, < 15 minutes)
+## Full reproduction (real Kaggle data, < 15 minutes)
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=sk-ant-...
-# 1. Download twcs.csv from kaggle.com/datasets/thoughtvector/customer-support-on-twitter
-#    and place it at data/raw/twcs.csv
+
+# 1. Configure free Groq API key in .env (or export GROQ_API_KEY=gsk_...)
+#    GROQ_API_KEY=gsk_...
+#    SUPPORT_AGENT_LLM_MODEL=openai/gpt-oss-120b
+
+# 2. Automatically download twcs.csv using kagglehub into data/raw/twcs.csv
+python scripts/download_kaggle.py
+
+# 3. Run pipeline against real Kaggle data
 python -m scripts.inspect_dataset --data-source kaggle --top-n 15
 python -m scripts.build_sample --data-source kaggle --sample-size 20000
 python -m scripts.discover_intents          # inspect clusters, then hand-edit data/intent_taxonomy.json
 python -m scripts.build_golden_set --target-size 200   # then manually review/correct labels
 python -m scripts.build_index --data-source kaggle       # builds the FAISS index
-python -m scripts.evaluate --data-source kaggle --full   # LLM generation + LLM judge (uses API credits)
-python -m src.predict --message "..." --full
+python -m scripts.evaluate --data-source kaggle --full --limit 10   # LLM generation + LLM judge
+python -m src.predict --message "I need to cancel my order" --full
 uvicorn src.api.main:app --reload
 ```
 
