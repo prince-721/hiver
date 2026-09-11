@@ -1,0 +1,610 @@
+{
+  "n_evaluated": 35,
+  "metrics": {
+    "n": 35,
+    "pearson_r": 0.371,
+    "pearson_p": 0.0281,
+    "spearman_r": 0.168,
+    "spearman_p": 0.3332,
+    "mean_abs_diff": 1.014
+  },
+  "human_mean": 3.94,
+  "judge_mean": 4.96,
+  "paired_ratings": [
+    {
+      "id": "golden_0001",
+      "customer_message": "Package from MockBrandA has been 'in transit' for 9 days, tracking not updating.",
+      "generated_reply": "Apologies for the delay! Please DM us your order number and zip code so we can trace the package with the carrier.",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 4.5,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard, correctly asks for needed details, fully addresses the issue, and makes no unsafe claims."
+    },
+    {
+      "id": "golden_0002",
+      "customer_message": "I noticed fraudulent unauthorized charges from MockBrandA on my card, my account was compromised!",
+      "generated_reply": "We\u2019re sorry to hear about the unauthorized charges. Please DM us your order number and the last\u202f4\u202fdigits of the card used so we can investigate this issue further.",
+      "reference_reply": "We're sorry about that. Please DM us your order number and the last 4 digits of the card used so we can investigate the duplicate charge.",
+      "human_overall_score": 4.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly follows the brand's standard response, correctly addresses the fraud complaint, and makes no unsupported promises."
+    },
+    {
+      "id": "golden_0003",
+      "customer_message": "Cancel button is disabled in my account settings, please assist.",
+      "generated_reply": "You can cancel anytime from **Account\u202f>\u202fSubscription\u202f>\u202fCancel**. If the button is disabled or you don\u2019t see that option, please DM us and we\u2019ll handle it directly.",
+      "reference_reply": "You can cancel anytime from Account > Subscription > Cancel. DM us if you don't see that option and we'll help directly.",
+      "human_overall_score": 4.8,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly mirrors the brand's standard guidance, correctly addressing the disabled cancel button and safely offering direct help."
+    },
+    {
+      "id": "golden_0004",
+      "customer_message": "Can I get a refund for MockBrandA order #16877, item arrived damaged.",
+      "generated_reply": "So sorry to hear the item arrived damaged. Please DM us your order number and we'll escalate the refund to our billing team right away.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 3.2,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard response, fully addresses the refund request, is grounded in the provided evidence, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0005",
+      "customer_message": "I demand to speak to a real human supervisor right now, your automated bots are useless!",
+      "generated_reply": "We\u2019re really sorry you\u2019ve had a frustrating experience. Please DM us your order number or case ID and a senior agent will personally follow up with you.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard response, directly addresses the request for a supervisor, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0006",
+      "customer_message": "I can't log into my MockBrandA account, it keeps saying invalid password even after reset.",
+      "generated_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window. If it still fails, DM us your registered email so we can look into your account.",
+      "reference_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window - if it still fails DM us your registered email so we can look into your account.",
+      "human_overall_score": 4.6,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard guidance, fully addresses the login issue with safe, actionable steps, and is consistent with brand tone."
+    },
+    {
+      "id": "golden_0007",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. Please DM us your order or case number so a senior agent can personally follow up and prioritize a resolution. We\u2019ll make sure this gets escalated right away.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 2.8,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard apologetic and escalation response, fully addressing the complaint without making unsupported promises."
+    },
+    {
+      "id": "golden_0008",
+      "customer_message": "Returned my package 10 days ago for order #24668, when will my refund be credited?",
+      "generated_reply": "So sorry for the wait. Please DM us your order number and we\u2019ll escalate the refund to our billing team right away.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 4.2,
+      "judge_overall_score": 4.83,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 4.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply follows the brand's standard procedure and is factually correct and safe, though it could be more helpful by acknowledging the provided order number."
+    },
+    {
+      "id": "golden_0009",
+      "customer_message": "Requested a refund on order #38752 a week ago, still nothing.",
+      "generated_reply": "We\u2019re sorry for the delay with your refund for order\u202f#38752. I\u2019ve flagged this to our billing team and they\u2019ll prioritize processing it. I\u2019ll let you know as soon as it\u2019s completed.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 3.8,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard wording, directly addresses the refund delay, and makes safe, evidence\u2011based statements."
+    },
+    {
+      "id": "golden_0010",
+      "customer_message": "Cancel button is disabled in my account settings, please assist.",
+      "generated_reply": "You can cancel anytime from **Account\u202f>\u202fSubscription\u202f>\u202fCancel**. If the button is disabled or you don\u2019t see that option, please DM us and we\u2019ll help you directly.",
+      "reference_reply": "You can cancel anytime from Account > Subscription > Cancel. DM us if you don't see that option and we'll help directly.",
+      "human_overall_score": 4.5,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply precisely follows the brand's standard guidance, directly addresses the disabled cancel button, and is fully supported by the provided evidence."
+    },
+    {
+      "id": "golden_0011",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. Please DM us your order or case number so a senior agent can personally follow up and get this resolved promptly.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard response, fully addresses the customer's concern, is grounded in the provided evidence, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0012",
+      "customer_message": "Why does the MockBrandA app keep logging me out every 5 minutes?",
+      "generated_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window\u2014if it still logs you out, DM us your registered email so we can look into your account.",
+      "reference_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window - if it still fails DM us your registered email so we can look into your account.",
+      "human_overall_score": 4.7,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard guidance, directly addresses the logout issue, and provides safe, actionable steps."
+    },
+    {
+      "id": "golden_0013",
+      "customer_message": "Can I get a refund for MockBrandA order #88525, item arrived damaged.",
+      "generated_reply": "So sorry to hear the item arrived damaged. Please DM us your order number and we\u2019ll escalate the refund to our billing team right away.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 4.1,
+      "judge_overall_score": 4.83,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 4.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard policy and correctly addresses the refund request, but redundantly asks for the order number already provided."
+    },
+    {
+      "id": "golden_0014",
+      "customer_message": "Courier delivered my package for order #28777 to the wrong street address.",
+      "generated_reply": "We\u2019re sorry for the mix\u2011up. Please DM us your order number and zip code so we can trace the package with the carrier and get this sorted out.",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 3.5,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply follows the brand's standard apology and request for order details, correctly addresses the misdelivery issue, and makes no unsupported promises."
+    },
+    {
+      "id": "golden_0015",
+      "customer_message": "Fourth time reporting this bug where order #88326 keeps failing, fix your platform!",
+      "generated_reply": "We're really sorry to hear that your order\u202f#88326 keeps failing. Please DM us the details so a senior agent can personally follow up and get this resolved.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.3,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard response, fully addresses the customer's complaint, and makes no unsupported promises."
+    },
+    {
+      "id": "golden_0016",
+      "customer_message": "Fourth time reporting this bug where order #64732 keeps failing, fix your platform!",
+      "generated_reply": "We\u2019re really sorry to hear about the repeated issue with order\u202f#64732. A senior agent will investigate this for you\u2014please DM us with any additional details so they can follow up directly.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.6,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly mirrors the brand's standard response, fully addressing the customer's complaint with appropriate next steps and no unsafe promises."
+    },
+    {
+      "id": "golden_0017",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry to hear about the delays you\u2019ve experienced. Please DM us your order number so a senior agent can personally follow up and get this resolved for you.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard response, fully addresses the complaint, is grounded in the provided evidence, and makes safe, consistent commitments."
+    },
+    {
+      "id": "golden_0018",
+      "customer_message": "Can I get a refund for MockBrandA order #14202, item arrived damaged.",
+      "generated_reply": "So sorry to hear the item arrived damaged. Please DM us your order number and we'll escalate the refund to our billing team right away.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 4.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply accurately follows the brand's standard response, fully addresses the refund request, is directly supported by the evidence, provides a clear next step, matches brand tone, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0019",
+      "customer_message": "Courier delivered my package for order #16051 to the wrong street address.",
+      "generated_reply": "We\u2019re sorry your package was delivered to the wrong address. Please DM us your order number and zip code so we can trace the shipment with the carrier and resolve this for you.",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 3.7,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly matches the brand's standard response, fully addresses the problem, is well\u2011grounded in the evidence, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0020",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. Please DM us your order or case number so a senior agent can personally follow up and get this resolved quickly.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.8,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply mirrors the brand's standard response, fully addresses the customer's complaint, is accurate, evidence\u2011based, helpful, consistent with brand tone, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0021",
+      "customer_message": "Didn't receive the 2FA SMS verification code to log into my MockBrandA account.",
+      "generated_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window \u2013 if it still fails, DM us your registered email so we can look into your account.",
+      "reference_reply": "Sorry for the trouble! Please try resetting your password from a private/incognito window - if it still fails DM us your registered email so we can look into your account.",
+      "human_overall_score": 2.5,
+      "judge_overall_score": 4.0,
+      "judge_breakdown": {
+        "correctness": 3.0,
+        "relevance": 3.0,
+        "groundedness": 5.0,
+        "helpfulness": 3.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply follows brand policy and is grounded in evidence, but only partially addresses the specific 2FA SMS issue, offering generic password reset steps."
+    },
+    {
+      "id": "golden_0022",
+      "customer_message": "Why was I billed $41.99 when my plan is supposed to be $24.99?",
+      "generated_reply": "We\u2019re sorry about that. Please DM us your order number and the last\u202f4\u202fdigits of the card used so we can investigate the charge.",
+      "reference_reply": "We're sorry about that. Please DM us your order number and the last 4 digits of the card used so we can investigate the duplicate charge.",
+      "human_overall_score": 4.2,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply follows the brand's standard procedure, is directly supported by the evidence, and safely moves the issue forward by requesting necessary details."
+    },
+    {
+      "id": "golden_0023",
+      "customer_message": "I have been transferred between 4 different agents and none of you are resolving my case.",
+      "generated_reply": "We\u2019re really sorry to hear about the multiple transfers and the lack of resolution. Please DM us your case or order number so a senior agent can personally follow up and get this sorted for you.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.9,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly mirrors the brand's standard response, fully addressing the issue with a safe, actionable next step."
+    },
+    {
+      "id": "golden_0024",
+      "customer_message": "Package from MockBrandA has been 'in transit' for 9 days, tracking not updating.",
+      "generated_reply": "We\u2019re sorry for the delay. Please DM us your order number and zip code so we can trace the package with the carrier.",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 4.5,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly matches the brand's standard response, fully addresses the customer's concern, is well\u2011grounded in the evidence, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0025",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. Please DM us your order\u202f#468469 so a senior agent can personally follow up and, if needed, expedite a refund. Thank you for your patience.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.1,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard response, fully addresses the customer's concern, is grounded in the provided evidence, and makes safe, consistent commitments."
+    },
+    {
+      "id": "golden_0026",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. Please DM us your case or order number so a senior agent can personally follow up and get this resolved quickly.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.4,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly mirrors the brand's standard response, fully addressing the complaint, safely offering next steps, and staying consistent with brand tone."
+    },
+    {
+      "id": "golden_0027",
+      "customer_message": "My MockBrandA order #17323 says delivered but I never received it.",
+      "generated_reply": "We\u2019re sorry to hear your order shows as delivered but didn\u2019t arrive. Could you please DM us your order number and the zip code for the shipping address so we can trace the package with the carrier? Thank you!",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 4.0,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard response, correctly addresses the missing delivery, and safely requests needed details."
+    },
+    {
+      "id": "golden_0028",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delays you\u2019ve experienced. Please DM us your order or case number so a senior agent can personally follow up and get this resolved as quickly as possible. We appreciate your patience and will prioritize your request.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.3,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly mirrors the brand's standard response, correctly addresses the complaint, is fully grounded, helpful, consistent, and safe."
+    },
+    {
+      "id": "golden_0029",
+      "customer_message": "I demand to speak to a real human supervisor right now, your automated bots are useless!",
+      "generated_reply": "We\u2019re really sorry to hear that. Please DM us your order number so a senior agent can personally follow up with you.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.6,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard policy, directly addresses the request for a supervisor, is fully supported by the evidence, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0030",
+      "customer_message": "Waiting on hold for 2 hours for order #65977, absolutely unacceptable support.",
+      "generated_reply": "We\u2019re really sorry to hear about the long hold time. Please DM us your order number (#65977) so a senior agent can personally follow up.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 4.1,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply accurately acknowledges the long hold time, follows the brand's standard response, and safely asks for the order number to enable follow\u2011up."
+    },
+    {
+      "id": "golden_0031",
+      "customer_message": "If MockBrandA does not resolve this unauthorized charge of $60.99, I will pursue legal action with my lawyer.",
+      "generated_reply": "We\u2019re sorry to hear about the unauthorized charge. Please DM us your order number and the last\u202f4\u202fdigits of the card used so we can investigate and resolve this for you.",
+      "reference_reply": "We're sorry about that. Please DM us your order number and the last 4 digits of the card used so we can investigate the duplicate charge.",
+      "human_overall_score": 2.9,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard policy, correctly asks for order details to investigate, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0032",
+      "customer_message": "MockBrandA billed my credit card after I switched payment methods.",
+      "generated_reply": "We\u2019re sorry about that. Please DM us your order number and the last\u202f4\u202fdigits of the card used so we can investigate the duplicate charge.",
+      "reference_reply": "We're sorry about that. Please DM us your order number and the last 4 digits of the card used so we can investigate the duplicate charge.",
+      "human_overall_score": 4.3,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly matches the brand's standard response, fully addresses the issue, is grounded in the provided evidence, and is safe and consistent with brand policy."
+    },
+    {
+      "id": "golden_0033",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "generated_reply": "We\u2019re really sorry for the delay and understand your frustration. I\u2019ve flagged your case (order\u202f#15711572) for a senior agent to review personally. They\u2019ll reach out via DM shortly to resolve this promptly.",
+      "reference_reply": "We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up.",
+      "human_overall_score": 3.6,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply matches the brand's standard response, fully addresses the customer's frustration, is grounded in the provided evidence, and makes safe, consistent commitments."
+    },
+    {
+      "id": "golden_0034",
+      "customer_message": "My MockBrandA order #17592 says delivered but I never received it.",
+      "generated_reply": "We\u2019re sorry you haven\u2019t received your order. Please DM us your order number and zip code so we can trace the package with the carrier.",
+      "reference_reply": "Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier.",
+      "human_overall_score": 4.7,
+      "judge_overall_score": 5.0,
+      "judge_breakdown": {
+        "correctness": 5.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply exactly follows the brand's standard guidance, fully addresses the missing delivery, and makes no unsafe promises."
+    },
+    {
+      "id": "golden_0035",
+      "customer_message": "Requested a refund on order #80697 a week ago, still nothing.",
+      "generated_reply": "So sorry for the wait. Please DM us your order number and we\u2019ll escalate the refund to our billing team right away.",
+      "reference_reply": "So sorry for the wait. Please DM your order number and we'll escalate the refund to our billing team right away.",
+      "human_overall_score": 3.8,
+      "judge_overall_score": 4.83,
+      "judge_breakdown": {
+        "correctness": 4.0,
+        "relevance": 5.0,
+        "groundedness": 5.0,
+        "helpfulness": 5.0,
+        "brand_consistency": 5.0,
+        "safety": 5.0
+      },
+      "judge_reason": "The reply follows the brand's standard procedure and is safe, but it redundantly asks for the order number instead of acknowledging the one already given."
+    }
+  ]
+}

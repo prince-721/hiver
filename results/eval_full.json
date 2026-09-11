@@ -1,0 +1,188 @@
+{
+  "n_golden": 200,
+  "mode": "light",
+  "judge_is_mock": true,
+  "intent": {
+    "accuracy": 0.875,
+    "macro_f1": 0.8333333333333333,
+    "per_class_report": {
+      "billing_issue": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "cancellation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "complaint": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 25.0
+      },
+      "delivery_problem": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "login_problem": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "other": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "refund_request": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 25.0
+      },
+      "technical_problem": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 25.0
+      },
+      "accuracy": 0.875,
+      "macro avg": {
+        "precision": 0.8125,
+        "recall": 0.875,
+        "f1-score": 0.8333333333333333,
+        "support": 200.0
+      },
+      "weighted avg": {
+        "precision": 0.8125,
+        "recall": 0.875,
+        "f1-score": 0.8333333333333333,
+        "support": 200.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        25,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        25,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        25,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        25,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        25,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        25
+      ]
+    ],
+    "labels": [
+      "billing_issue",
+      "cancellation",
+      "complaint",
+      "delivery_problem",
+      "login_problem",
+      "other",
+      "refund_request",
+      "technical_problem"
+    ]
+  },
+  "escalation": {
+    "precision": 1.0,
+    "recall": 0.7407,
+    "f1": 0.8511,
+    "false_auto_handle_rate": 0.105,
+    "automation_coverage": 0.7,
+    "n": 200
+  },
+  "retrieval": {
+    "recall_at_1": 0.0,
+    "recall_at_3": 0.0,
+    "recall_at_5": 0.0,
+    "mrr": 0.0,
+    "note": "Recall/MRR here are ALWAYS 0 by construction on this codebase: golden-set conversation_ids are deliberately excluded from the knowledge pool (leakage prevention, see DECISIONS.md #3), so a self-id match can never occur. This is a placeholder wiring check only - a real Recall@k needs human relevance judgments (\"which historical case(s) would correctly ground this query\"), which don't exist yet."
+  },
+  "judge_scores_mean": {
+    "correctness": 3.93,
+    "relevance": 2.81,
+    "groundedness": 5.0,
+    "helpfulness": 3.56,
+    "brand_consistency": 3.94,
+    "safety": 5.0,
+    "overall": 4.04
+  }
+}

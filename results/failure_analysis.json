@@ -1,0 +1,71 @@
+{
+  "n_golden": 200,
+  "n_total_failures_identified": 99,
+  "top_5_failure_modes": [
+    {
+      "failure_type": "Wrong Escalation (False Auto-Handle)",
+      "customer_message": "I demand to speak to a real human supervisor right now, your automated bots are useless!",
+      "model_output": {
+        "intent": "other",
+        "escalation_decision": "AUTO_HANDLE",
+        "escalation_reason": "High-confidence intent (0.59), strong retrieval grounding (1.00), no high-risk signals.",
+        "reply": "[MOCK, not LLM-generated] We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up."
+      },
+      "expected_behavior": "ESCALATE (Reason: Customer explicitly requests human support and rejects automated assistance.)",
+      "why_it_failed": "Model auto-handled because intent confidence and retrieval similarity were above thresholds, but missed safety/frustration signals.",
+      "hypothesis": "Keyword-only triggers miss subtle expressions of repetitive customer frustration or implicit escalation demands.",
+      "possible_fix": "Add dedicated sentiment/frustration classifier and customer history signals to escalation policy gates."
+    },
+    {
+      "failure_type": "Multi-Intent Compound Query",
+      "customer_message": "Want to cancel my auto-renew membership with MockBrandA.",
+      "model_output": {
+        "intent": "cancellation",
+        "intent_confidence": 0.3969,
+        "reply": "[MOCK, not LLM-generated] You can cancel anytime from Account > Subscription > Cancel. DM us if you don't see that option and we'll help directly."
+      },
+      "expected_behavior": "Acknowledge both the cancellation status and the disputed charge; escalate to billing specialist.",
+      "why_it_failed": "Single-label classification forces one winner, ignoring the secondary issue in the customer message.",
+      "hypothesis": "Single-intent classification schemas collapse compound customer issues, causing the reply to answer only half the customer's problem.",
+      "possible_fix": "Implement multi-label intent detection or an issue-decomposition step prior to retrieval."
+    },
+    {
+      "failure_type": "Repetitive Unresolved Complaint",
+      "customer_message": "Extremely disappointed with MockBrandA support response time, this is the 3rd time I've written in.",
+      "model_output": {
+        "intent": "complaint",
+        "escalation_decision": "ESCALATE",
+        "reply": "[MOCK, not LLM-generated] We're really sorry to hear that. Please DM your case/order number so a senior agent can personally follow up."
+      },
+      "expected_behavior": "Immediate escalation to senior human specialist with personalized apology.",
+      "why_it_failed": "Generic retrieval retrieved standard first-contact template replies rather than escalation protocols.",
+      "hypothesis": "Historical support pairs often contain first-line deflection replies that are inappropriate for customers on their 3rd+ attempt.",
+      "possible_fix": "Filter retrieval candidates by contact-attempt count; enforce hard escalation on repeat contact patterns."
+    },
+    {
+      "failure_type": "Borderline Intent Boundary",
+      "customer_message": "Can't log in to check on my order #31871, app just spins forever.",
+      "model_output": {
+        "intent": "login_problem",
+        "intent_confidence": 0.6555
+      },
+      "expected_behavior": "Accurately disambiguate between technical app failure vs user credential error (login_problem).",
+      "why_it_failed": "Overlapping vocabulary ('app', 'login', 'error') creates high similarity to multiple intent centroids.",
+      "hypothesis": "Surface lexical features cannot distinguish app rendering crashes from server-side credential rejections without telemetry.",
+      "possible_fix": "Include app log / platform error codes in the context payload to disambiguate auth vs app crashes."
+    },
+    {
+      "failure_type": "Missing Conversation Context Dependency",
+      "customer_message": "Package from MockBrandA has been 'in transit' for 9 days, tracking not updating.",
+      "model_output": {
+        "intent": "delivery_problem",
+        "context_used": "Prior customer inquiries on order #18111812",
+        "reply": "[MOCK, not LLM-generated] Apologies for the delay! Please DM your order number and zip code so we can trace the package with the carrier."
+      },
+      "expected_behavior": "Incorporate prior conversation turn into intent and retrieval resolution.",
+      "why_it_failed": "First-line baseline embeds only the current customer turn, ignoring historical thread context.",
+      "hypothesis": "Elliptical follow-ups ('still nothing', 'did you check') cannot be routed accurately without parent turn context.",
+      "possible_fix": "Concatenate parent turn context (or generate thread summary) into query representation before retrieval."
+    }
+  ]
+}

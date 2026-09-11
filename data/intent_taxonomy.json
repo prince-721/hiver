@@ -1,0 +1,56 @@
+{
+  "brand": "@MockBrandASupport",
+  "derived_from": "TF-IDF+KMeans clustering of cleaned customer messages, see scripts/discover_intents.py output, hand-named by a human reviewer",
+  "note": "Built here against the MOCK sample to prove the pipeline end-to-end. Re-run scripts/discover_intents.py against the real Kaggle data for the real brand and re-derive/rename these before treating them as final.",
+  "intents": [
+    {
+      "intent_name": "login_problem",
+      "description": "Customer cannot access their account (password reset failing, locked out).",
+      "in_scope_examples": ["I can't log into my account, it keeps saying invalid password."],
+      "out_of_scope_examples": ["I want to cancel my subscription."],
+      "labeling_rules": "Label login_problem only if the core blocker is authentication/access, not billing or app crashes."
+    },
+    {
+      "intent_name": "billing_issue",
+      "description": "Incorrect or unexpected charge (duplicate charge, wrong plan price, surprise renewal).",
+      "in_scope_examples": ["Charged me twice for the same order, need this fixed."],
+      "out_of_scope_examples": ["Requested a refund on order X a week ago, still nothing."],
+      "labeling_rules": "If the customer is disputing a charge that already happened -> billing_issue. If they already agree a refund is owed and are asking about its status -> refund_request."
+    },
+    {
+      "intent_name": "refund_request",
+      "description": "Customer is explicitly asking for, or following up on, a refund.",
+      "in_scope_examples": ["Can I get a refund for order X, item arrived damaged."],
+      "out_of_scope_examples": ["Why was I billed $58.99 when my plan is $22.99?"],
+      "labeling_rules": "Requires the word 'refund' or a clear ask for money back, not just a billing dispute."
+    },
+    {
+      "intent_name": "delivery_problem",
+      "description": "Order not received, stuck in transit, or tracking not updating.",
+      "in_scope_examples": ["Order says delivered but I never received it.", "Package in transit for 9 days, tracking not updating."],
+      "out_of_scope_examples": ["Item arrived damaged, want a refund."],
+      "labeling_rules": "Physical delivery/logistics issue only; damaged-item-plus-refund-ask goes to refund_request."
+    },
+    {
+      "intent_name": "technical_problem",
+      "description": "App or website malfunction (crash, error page, broken feature).",
+      "in_scope_examples": ["App crashes every time I open the payments tab.", "Checkout throwing a 500 error on step 3."],
+      "out_of_scope_examples": ["Can't log in because of invalid password."],
+      "labeling_rules": "Login/auth failures are login_problem even though technically an app behavior; everything else app/site-broken is technical_problem."
+    },
+    {
+      "intent_name": "cancellation",
+      "description": "Customer wants to cancel a subscription/service.",
+      "in_scope_examples": ["How do I cancel my subscription? Can't find the option."],
+      "out_of_scope_examples": ["Auto-renewed without warning, want a refund."],
+      "labeling_rules": "Pure cancel-the-service asks only; renewal disputes are billing_issue."
+    },
+    {
+      "intent_name": "complaint",
+      "description": "General dissatisfaction, often about repeated unresolved contact, not tied to one specific transactional ask.",
+      "in_scope_examples": ["Extremely disappointed with support response time, this is the 3rd time I've written in."],
+      "out_of_scope_examples": ["My order was late."],
+      "labeling_rules": "Use complaint only when there is no clear single actionable request - otherwise prefer the more specific intent."
+    }
+  ]
+}

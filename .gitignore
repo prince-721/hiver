@@ -1,0 +1,25 @@
+# Environment variables and secrets
+.env
+.env.local
+
+# Python cache & build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDE and caches
+.vscode/
+.idea/
+.cache/
+.pytest_cache/
+
+# Raw dataset (downloaded separately from Kaggle)
+data/raw/*.csv
+data/raw/*.zip
+
+# Vector indices & artifacts
+*.faiss
+*.pkl

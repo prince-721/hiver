@@ -1,0 +1,324 @@
+{
+  "majority_baseline": {
+    "intent": {
+      "accuracy": 0.125,
+      "macro_f1": 0.0278,
+      "per_class_report": {
+        "billing_issue": {
+          "precision": 0.125,
+          "recall": 1.0,
+          "f1-score": 0.2222,
+          "support": 25
+        },
+        "cancellation": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "complaint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "delivery_problem": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "login_problem": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "other": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "refund_request": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        },
+        "technical_problem": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 25
+        }
+      },
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "billing_issue",
+        "cancellation",
+        "complaint",
+        "delivery_problem",
+        "login_problem",
+        "other",
+        "refund_request",
+        "technical_problem"
+      ]
+    },
+    "escalation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_auto_handle_rate": 0.405,
+      "automation_coverage": 1.0,
+      "n": 200
+    }
+  },
+  "tfidf_baseline": {
+    "intent": {
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "per_class_report": {
+        "billing_issue": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "cancellation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "complaint": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "delivery_problem": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "login_problem": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "refund_request": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        },
+        "technical_problem": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 25
+        }
+      },
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          25,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          25,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          25
+        ]
+      ],
+      "labels": [
+        "billing_issue",
+        "cancellation",
+        "complaint",
+        "delivery_problem",
+        "login_problem",
+        "other",
+        "refund_request",
+        "technical_problem"
+      ]
+    },
+    "escalation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_auto_handle_rate": 0.405,
+      "automation_coverage": 1.0,
+      "n": 200
+    }
+  },
+  "rule_escalation_policy_on_tfidf": {
+    "escalation": {
+      "precision": 1.0,
+      "recall": 0.7407,
+      "f1": 0.8511,
+      "false_auto_handle_rate": 0.105,
+      "automation_coverage": 0.7,
+      "n": 200
+    }
+  }
+}
