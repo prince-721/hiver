@@ -10,6 +10,11 @@ inspecting these clusters.
 from __future__ import annotations
 
 import argparse
+import sys
+
+# Ensure UTF-8 output encoding on Windows consoles
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import pandas as pd
 

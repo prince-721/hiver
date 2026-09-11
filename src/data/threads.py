@@ -27,34 +27,29 @@ class ThreadStats:
 def reconstruct_pairs(df: pd.DataFrame, brand_author_id: str) -> tuple[pd.DataFrame, ThreadStats]:
     """
     Build one row per (customer_message, support_response) pair for a
-    given brand account. Also returns simple thread statistics used for
-    brand selection.
+    given brand account using vectorized merge. Also returns thread statistics.
     """
-    by_id = df.set_index("tweet_id")
-    brand_msgs = df[(df["author_id"] == brand_author_id) & (~df["inbound"])]
+    brand_msgs = df[(df["author_id"] == brand_author_id) & (~df["inbound"])].dropna(subset=["in_response_to_tweet_id"])
+    inbound_msgs = df[df["inbound"]]
 
-    records = []
-    for _, brand_row in brand_msgs.iterrows():
-        parent_id = brand_row["in_response_to_tweet_id"]
-        if pd.isna(parent_id) or parent_id not in by_id.index:
-            continue
-        parent = by_id.loc[parent_id]
-        if not parent["inbound"]:
-            continue  # brand replying to itself/another brand tweet - not a customer pair
-        records.append({
-            "conversation_id": f"{int(parent_id)}_{int(brand_row['tweet_id'])}",
-            "customer_message": parent["text"],
-            "support_response": brand_row["text"],
-            "brand": brand_author_id,
-            "customer_tweet_id": int(parent_id),
-            "support_tweet_id": int(brand_row["tweet_id"]),
-            "timestamp": brand_row.get("created_at"),
-        })
+    merged = brand_msgs.merge(
+        inbound_msgs,
+        left_on="in_response_to_tweet_id",
+        right_on="tweet_id",
+        suffixes=("_support", "_customer"),
+    )
 
-    pairs_df = pd.DataFrame.from_records(records)
+    pairs_df = pd.DataFrame({
+        "conversation_id": merged["in_response_to_tweet_id_support"].astype(int).astype(str) + "_" + merged["tweet_id_support"].astype(int).astype(str),
+        "customer_message": merged["text_customer"],
+        "support_response": merged["text_support"],
+        "brand": brand_author_id,
+        "customer_tweet_id": merged["in_response_to_tweet_id_support"].astype(int),
+        "support_tweet_id": merged["tweet_id_support"].astype(int),
+        "timestamp": merged["created_at_support"],
+    })
 
     total_inbound = int((df["inbound"]).sum())
-    # inbound tweets that were ever answered by *this* brand
     answered_ids = set(pairs_df["customer_tweet_id"]) if len(pairs_df) else set()
     unanswered = total_inbound - len(answered_ids)
     stats = ThreadStats(

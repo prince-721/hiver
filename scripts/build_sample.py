@@ -34,12 +34,13 @@ def main() -> None:
         print(f"Using previously selected brand: {brand}")
 
     df = load_raw(args.data_source)
-    if len(df) > args.sample_size:
-        df = df.sample(n=args.sample_size, random_state=args.seed)
-
     pairs_df, stats = reconstruct_pairs(df, brand)
     print(f"Reconstructed {stats.usable_pairs} usable pairs "
           f"({stats.pct_answered}% of {stats.total_inbound} inbound msgs answered by this brand).")
+
+    if args.sample_size and len(pairs_df) > args.sample_size:
+        print(f"Sampling {args.sample_size} pairs (seed={args.seed})...")
+        pairs_df = pairs_df.sample(n=args.sample_size, random_state=args.seed).reset_index(drop=True)
 
     cleaned = filter_pairs(pairs_df)
     print(f"After cleaning: {len(cleaned)} pairs kept, {cleaned.attrs['n_dropped']} dropped "
