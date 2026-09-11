@@ -1,2 +1,2 @@
-@MockBrandASupport
-Selected '@MockBrandASupport': highest usable customer/support pair count (1138) among candidates with >= 50 pairs, with 63.22% of customer messages answered.
+AmazonHelp
+Selected 'AmazonHelp': highest usable customer/support pair count (168814) among candidates with >= 50 pairs, with 10.98% of customer messages answered.
