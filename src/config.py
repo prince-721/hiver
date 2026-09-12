@@ -48,10 +48,10 @@ for d in (RAW_DIR, MOCK_RAW_DIR, PROCESSED_DIR, GOLDEN_DIR, RESULTS_DIR, CACHE_D
 @dataclass
 class Settings:
     # --- data source ---
-    # "mock" uses the small synthetic sample shipped in data/mock_raw so the
-    # pipeline is runnable with zero setup. "kaggle" expects the real CSV
-    # (twcs.csv from thoughtvector/customer-support-on-twitter) in data/raw/.
-    data_source: str = os.environ.get("SUPPORT_AGENT_DATA_SOURCE", "mock")
+    data_source: str = os.environ.get(
+        "SUPPORT_AGENT_DATA_SOURCE",
+        "kaggle" if (RAW_DIR / "twcs.csv").exists() else "mock"
+    )
     raw_csv_name: str = "twcs.csv"
 
     # --- brand / sampling ---

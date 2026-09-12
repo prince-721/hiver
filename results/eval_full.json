@@ -154,11 +154,11 @@
   },
   "judge_scores_mean": {
     "correctness": 3.9,
-    "relevance": 4.6,
-    "groundedness": 3.4,
+    "relevance": 4.4,
+    "groundedness": 3.0,
     "helpfulness": 4.1,
-    "brand_consistency": 4.9,
+    "brand_consistency": 4.5,
     "safety": 5.0,
-    "overall": 4.31
+    "overall": 4.15
   }
 }
